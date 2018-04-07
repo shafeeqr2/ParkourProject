@@ -1,0 +1,101 @@
+/* Define Navigation Bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #26b9d0;
+}
+
+
+.textbox {
+    width: 80%;
+    height: 25px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 15px;
+    padding-left: 15px;
+
+}
+
+.btnSubmit {
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 15%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+
+
+.parkour_guy {
+  display: none;
+  align:"center";
+  z-index: 1;
+  /* margin-left: 1600px;
+  margin-top: 200px; */
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  /* margin-right: -50%; */
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+
+.image_holder {
+
+  padding: 10px;
+
+}
+
+
+/* The Modal (background) */
+.modal {
+   z-index: 1; /* Sit on top */
+    /* position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+html {
+  background: url(image/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+}

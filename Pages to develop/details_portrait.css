@@ -1,0 +1,134 @@
+/* Define Navigation Bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 14px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #26b9d0;
+}
+
+h1 {
+
+  font-size: 20px;
+
+}
+
+
+.map_frame2 {
+
+  /* align:"center"; */
+  /* z-index: 1; */
+  /* display: block; */
+  height:50%;
+  width: 25%;
+
+  /* margin-left: 1600px;
+  margin-top: 200px; */
+
+  top: 30%;
+  right: 5%;
+  /* margin-right: -50%; */
+  /* transform: translate(-50%, -50%) */
+  position: absolute;
+
+
+}
+
+
+/* Add padding to container elements */
+.container {
+    padding: 6px;
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+    /* z-index: 1; /* Sit on top */ */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    right:0;
+    background-color: #cccccc;
+    margin: auto ; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 90%; /* Could be more or less, depending on screen size */
+    transition:  0.5s;
+    right:0;
+}
+
+tr.table_row > td{
+  padding-bottom: 1em;
+}
+
+.para1 {
+  margin-left: 30px;
+  width: 80%;
+  /* font-size: 20px; */
+  font: 14px arial, sans-serif;
+  font-weight: 900;
+
+}
+
+.para3 {
+
+  margin-left: 30px;
+  width: 80%;
+  /* font-size: 20px; */
+  font: 12px arial, sans-serif;
+
+}
+
+.map_frame {
+
+  /* align:"center"; */
+  z-index: 1;
+  display: block;
+  width: 80%;
+  height: 50%;
+  margin-left:8%;
+  /* margin-left: 1600px;
+  margin-top: 200px; */
+  /* margin: 0; */
+  /* top: 25%; */
+  /* right: 5%; */
+  /* margin-right: -50%; */
+  /* transform: translate(-50%, -50%) */
+  /* position: fixed; */
+
+
+}
+
+
+html {
+    background: linear-gradient(to top, #333333 0%, #26b9d0 96%);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    height: 100%;
+}

@@ -1,0 +1,135 @@
+/* Define Navigation Bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #26b9d0;
+}
+
+.textbox {
+    font-size: 22px;
+    width: 90%;
+    height: 25px;
+    margin-bottom: 20px;
+    position: relative;
+    /* left: 50px; */
+    padding-left: 2px;
+    /* align-content:flex-start; */
+
+}
+
+.heading1 {
+  /* margin-left: 0.5%; */
+  font-size: 18px;
+
+}
+
+.rating_above {
+  font-size: 22px;
+  height: 25px;
+  /* margin-left: 10px; */
+  /* position: relative; */
+  /* font: "Ar"; */
+  font-size: 22px;
+  /* width: auto; */
+
+  text-align: right;
+}
+
+.table {
+  width: 100%;
+}
+
+.rating_dropdown {
+  font-size: 20px;
+  margin-left: 30px;
+}
+/* The Modal (background) */
+.modal {
+    transition: all 0.5s;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0px;
+    top: 0px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 50px;
+    /* text-align: right; */
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+    margin-right: 10px;
+    text-align: right;
+    transition: all 0.5s;
+    background-color: #cccccc;
+    margin: 50% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 90%; /* Could be more or less, depending on screen size */
+}
+
+
+
+.btnSubmit {
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-align: middle;
+}
+
+.btnSubmit span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+
+}
+
+.btnSubmit span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+
+}
+
+.btnSubmit:hover span {
+  padding-right: 25px;
+}
+
+.btnSubmit:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+html {
+  background: url(image/bgd_search.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
