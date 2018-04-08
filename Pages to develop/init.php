@@ -1,7 +1,11 @@
 <?php
 include('header.php');
 
+$sql_drop_users = "drop table if exists siteDB.users cascade";
+$sql_drop_objects = "drop table if exists siteDB.objects cascade";
 
+$dbh ->  exec($sql_drop_users);
+$dbh ->  exec($sql_drop_objects);
 
 try {
 
@@ -40,9 +44,10 @@ try {
 
   echo "success in creating tables.\n";
 
+  echo 'Caught exception: ',  $e->getMessage(), "\n";
 
 } catch(PDOException $ex){
-    die(json_encode(array('outcome' => false, 'message' => $e->getMessage())));
+    die(json_encode(array('outcome' => false, 'message' => 'Unable to create tables.')));
 }
 
 $sql_list = "SHOW TABLES FROM $dbname";
