@@ -52,6 +52,7 @@ try {
 }
 
 echo "<br>";
+$dbname = 'siteDB';
 $sql_list = "SHOW TABLES FROM $dbname";
 $result = mysql_query($sql_list);
 
