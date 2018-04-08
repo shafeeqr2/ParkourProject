@@ -7,6 +7,7 @@ try {
   $sql_drop_users = "drop table if exists siteDB.users cascade";
   $sql_drop_objects = "drop table if exists siteDB.objects cascade";
 
+  //We have to drop the ojbects table before the users table because there exists the foreign key of the users lies in the objects table.
   $dbh ->  exec($sql_drop_objects);
   $dbh ->  exec($sql_drop_users);
 
@@ -66,6 +67,12 @@ if (!$result) {
     die();
 } else {
   echo $result;
+}
+
+$tables = $result->fetch_assoc();
+foreach($tables as $tablename)
+{
+    echo "$tablename <br>";
 }
 
 while ($row = mysql_fetch_row($result)) {
