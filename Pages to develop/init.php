@@ -50,7 +50,7 @@ try {
   echo "success in creating tables.<br>";
 
 //add data to TABLES
-$stmt = $dbh->prepare('INSERT INTO users (username, firstname, lastname, email, password, reg_date) VALUES (?, ?, ?, ?, ?, ?)');
+$stmt = $dbh->prepare('INSERT INTO siteDB.users (username, firstname, lastname, email, password, reg_date) VALUES (?, ?, ?, ?, ?, ?)');
 
 
 $stmt->bindParam(1, $username);
@@ -69,7 +69,7 @@ $time = strtotime(time,now);
 $return = $stmt->execute();
 
 
-$stmt = $dbh->prepare("INSERT INTO objects (name, city, address, postal_code, description, longitude, latitude, rating, owner_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $dbh->prepare("INSERT INTO siteDB.objects (name, city, address, postal_code, description, longitude, latitude, rating, owner_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bindParam(1, $name);
 $stmt->bindParam(2, $city);
 $stmt->bindParam(3, $street);
@@ -77,7 +77,7 @@ $stmt->bindParam(4, $postal_code);
 $stmt->bindParam(5, $description);
 $stmt->bindParam(6, $longitude);
 $stmt->bindParam(7, $latitude);
-$stmt->binbindParamdParam(8, $rating);
+$stmt->bindParam(8, $rating);
 $stmt->bindParam(9,$owner_id);
 
 $name = 'McMaster University';
@@ -89,8 +89,13 @@ $longitude = 43.2575;
 $latitude = -79.9168;
 $rating = 5;
 $owner_id = 1;
+
 $return = $stmt->execute();
 
+
+$stmt = $dbh->prepare('SELECT * FROM siteDB.objects');
+$return = $stmt -> execute();
+echo $return;
 
 } catch(PDOException $ex){
     die(json_encode(array('outcome' => false, 'message' => $ex->getMessage())));
