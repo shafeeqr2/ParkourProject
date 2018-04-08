@@ -28,7 +28,7 @@ try{
 }
 //Catch exception and output to screen the message that the conneciton failed.
 catch(PDOException $ex){
-    die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
+    die(json_encode(array('outcome' => false, 'message' => 'Unable to connect to database')));
 }
 
 ?>
