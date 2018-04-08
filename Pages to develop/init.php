@@ -34,8 +34,8 @@ try {
   description VARCHAR(50) NOT NULL,
   lat DECIMAL(10, 8) NOT NULL,
   long DECIMAL(11, 8) NOT NULL,
-  object_id INT(9) UNSIGNED,
-  owner_id INT(9) UNSIGNED,
+  object_id INT(9) UNSIGNED NOT NULL,
+  owner_id INT(9) UNSIGNED NOT NULL,
   primary key(object_id),
   foreign key(owner_id) references users(id)
   )";
@@ -50,7 +50,7 @@ try {
     die(json_encode(array('outcome' => false, 'message' => $ex->getMessage())));
 }
 
-echo "<br>"
+echo "<br>";
 $sql_list = "SHOW TABLES FROM $dbname";
 $result = mysql_query($sql);
 
