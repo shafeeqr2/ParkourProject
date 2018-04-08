@@ -34,14 +34,11 @@ try {
   foreign key(owner_id) references users(id)
   )";
 
-  //Use prepare statement to write out SQL querry before execution. Use execute() to execute;
-  $stmt = $dbh -> prepare($sql_users);
-  $resut = $stmt -> execute();
-  echo $result;
-  $stmt = $dbh -> prepare($sql_objects);
-  $result = $stmt -> execute();
-  echo $result;
-  echo "success";
+  $dbh -> exec($sql_users);
+
+  $dbh -> exec($sql_objects);
+
+  echo "success in creating tables.\n";
 
 
 } catch(PDOException $ex){
