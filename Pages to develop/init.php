@@ -95,8 +95,9 @@ $return = $stmt->execute();
 
 $stmt = $dbh->prepare('SELECT * FROM siteDB.users');
 $return = $stmt -> execute();
-
+echo "blah <br>";
 while($row = mysql_fetch_array($return)) {
+print_r ($row);
 echo $row['username'].'<br>';
 echo $row['firstname']. '<br>';
 echo $row['lastname']. '<br>';
