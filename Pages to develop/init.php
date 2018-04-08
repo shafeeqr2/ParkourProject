@@ -1,42 +1,42 @@
 <?php
+include('header.php');
 
-//We start off by declaring variables that will be used in our connection.
-//servername is localhost as the mysql server is on the same machine as the site.
-$servername = 'localhost';
+//Create SQL statements to create tables.
+//Users Table
+$sql_users = "CREATE TABLE users (
+id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(30) NOT NULL,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50) NOT NULL,
+password TEXT NOT NULL,
+reg_date TIMESTAMP,
+primary key(id),
+unique (email)
+)";
 
-//The following are the mysql server credentials.
-$username = 'mysqluser';
-$password = 'Abc123!!';
+//Objects Table
+$sql_objects = "CREATE TABLE objects (
+name VARCHAR(50) NOT NULL,
+city VARCHAR(50) NOT NULL,
+address VARCHAR(50) NOT NULL,
+postal_code VARCHAR(50) NOT NULL,
+description VARCHAR(50) NOT NULL,
+lat DECIMAL(10, 8) NOT NULL,
+long DECIMAL(11, 8) NOT NULL,
+object_id INT(9) UNSIGNED,
+owner_id INT(9) UNSIGNED,
+primary key(object_id),
+foreign key(owner_id) references users(id)
+)";
 
-//Name of the mysql server
-$dbname = 'siteDB';
+//Use prepare statement to write out SQL querry before execution. Use execute() to execute;
+$stmt = $dbh -> prepare($sql_users);
+$stmt -> execute();
 
-//Create PDO
-//$conn = new msqli($servername, $username,$password, $dbname);
+$stmt = $dbh -> prepare($sql_objects);
+$stmt -> execute();
 
-$credentials = 'mysql:host=';
-$credentials = . $servername;
-$credentials = . ';dbname=';
-$credentials = . $dbname;
-
-print $credentials;
-
-try {
-  $dbhandler = new PDO($credentials, $username, $password);
-  $statement = $dbhandler->prepare('SELECT * FROM  users');
-  //Wait for connection to come through
-  sleep(5);
-
-  $statement -> execute();
-
-  foreach ($statement as $row) {
-    echo $row[name];
-  }
-
-
-} catch (PDOException $e) {
-  print "Error";
-
-}
+echo "success";
 
 ?>
