@@ -93,9 +93,20 @@ $owner_id = 1;
 $return = $stmt->execute();
 
 
-$stmt = $dbh->prepare('SELECT * FROM siteDB.objects');
+$stmt = $dbh->prepare('SELECT * FROM siteDB.users');
 $return = $stmt -> execute();
+
+while($row = mysql_fetch_array($return)) {
+echo $row['username'].'<br>';
+echo $row['firstname']. '<br>';
+echo $row['lastname']. '<br>';
+echo $row['email']. '<br>';
+
+}
+
 echo $return;
+
+
 
 } catch(PDOException $ex){
     die(json_encode(array('outcome' => false, 'message' => $ex->getMessage())));
