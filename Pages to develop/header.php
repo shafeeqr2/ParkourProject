@@ -16,18 +16,19 @@ $username = 'mysqluser';
 $password = 'Abc123!!';
 
 //Try to connect.
-//try{
+try{
 
     //Declare PDO object.
     $dbh = new pdo( $connection,
                     $username,
                     $password,
                     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    die(json_encode(array('outcome' => true)));
-//}
+  //  die(json_encode(array('outcome' => true)));
+  echo 'connection successful';
+}
 //Catch exception and output to screen the message that the conneciton failed.
-//catch(PDOException $ex){
-  //  die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
-//}
+catch(PDOException $ex){
+    die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
+}
 
 ?>
