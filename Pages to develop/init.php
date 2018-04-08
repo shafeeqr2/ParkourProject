@@ -69,7 +69,7 @@ $time = strtotime(time,now);
 $return = $stmt->execute();
 
 
-$stmt = $dbh->prepare("INSERT INTO siteDB.objects (name, city, address, postal_code, description, longitude, latitude, rating, owner_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $dbh->prepare("INSERT INTO siteDB.objectfghjs (name, city, address, postal_code, description, longitude, latitude, rating, owner_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bindParam(1, $name);
 $stmt->bindParam(2, $city);
 $stmt->bindParam(3, $street);
