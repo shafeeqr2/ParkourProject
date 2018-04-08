@@ -1,6 +1,8 @@
 <?php
 include('header.php');
 
+
+
 try {
 
   //Create SQL statements to create tables.
@@ -45,5 +47,20 @@ try {
 } catch(PDOException $ex){
     die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
 }
+
+$sql_list = "SHOW TABLES FROM $dbname";
+$result = mysql_query($sql);
+
+if (!$result) {
+    echo "DB Error, could not list tables\n";
+    echo 'MySQL Error: ' . mysql_error();
+    exit;
+}
+
+while ($row = mysql_fetch_row($result)) {
+    echo "Table: {$row[0]}\n";
+}
+
+mysql_free_result($result);
 
 ?>
