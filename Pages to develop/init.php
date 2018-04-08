@@ -32,11 +32,11 @@ foreign key(owner_id) references users(id)
 
 //Use prepare statement to write out SQL querry before execution. Use execute() to execute;
 $stmt = $dbh -> prepare($sql_users);
-$stmt -> execute();
-
+$resut = $stmt -> execute();
+echo $result;
 $stmt = $dbh -> prepare($sql_objects);
-$stmt -> execute();
-
+$result = $stmt -> execute();
+echo $result;
 echo "success";
 
 ?>
