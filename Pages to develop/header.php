@@ -24,7 +24,7 @@ $password = 'Abc123!!';
                     $password,
                     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
   //  die(json_encode(array('outcome' => true)));
-  echo 'connection successful\n';
+  echo 'connection successful<br>';
 //}
 //Catch exception and output to screen the message that the conneciton failed.
 //catch(PDOException $ex){

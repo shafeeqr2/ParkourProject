@@ -14,7 +14,7 @@ try {
   //Create SQL statements to create tables.
   //Users Table
   $sql_users = "CREATE TABLE users (
-  id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id INT(9) UNSIGNED AUTO_INCREMENT,
   username VARCHAR(30) NOT NULL,
   firstname VARCHAR(30) NOT NULL,
   lastname VARCHAR(30) NOT NULL,
@@ -44,14 +44,13 @@ try {
 
   $dbh -> exec($sql_objects);
 
-  echo "success in creating tables.\n";
-
-  echo 'Caught exception: ',  $e->getMessage(), "\n";
+  echo "success in creating tables.<br>";
 
 } catch(PDOException $ex){
-    die(json_encode(array('outcome' => false, 'message' => 'Unable to create tables.')));
+    die(json_encode(array('outcome' => false, 'message' => $ex->getMessage())));
 }
 
+echo "<br>"
 $sql_list = "SHOW TABLES FROM $dbname";
 $result = mysql_query($sql);
 
