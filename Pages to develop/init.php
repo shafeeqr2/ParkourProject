@@ -1,13 +1,15 @@
 <?php
 include('header.php');
 
-$sql_drop_users = "drop table if exists siteDB.users cascade";
-$sql_drop_objects = "drop table if exists siteDB.objects cascade";
-
-$dbh ->  exec($sql_drop_users);
-$dbh ->  exec($sql_drop_objects);
 
 try {
+  //Drop all prexisting TABLES
+  $sql_drop_users = "drop table if exists siteDB.users cascade";
+  $sql_drop_objects = "drop table if exists siteDB.objects cascade";
+
+  $dbh ->  exec($sql_drop_users);
+  $dbh ->  exec($sql_drop_objects);
+
 
   //Create SQL statements to create tables.
   //Users Table
