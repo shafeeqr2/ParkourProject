@@ -51,30 +51,30 @@ try {
 
 //add data to TABLES
 $stmt = $dbh->prepare("INSERT INTO users (username, firstname, lastname, email, password, reg_date) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bindParam(1, 'testuser1');
-$stmt->bindParam(2, 'john');
-$stmt->bindParam(3, 'smith');
-$stmt->bindParam(4, 'test@gmail.com');
+$stmt->bind_param(1, 'testuser1');
+$stmt->bind_param(2, 'john');
+$stmt->bind_param(3, 'smith');
+$stmt->bind_param(4, 'test@gmail.com');
 $password = password_hash('Abc123!!', PASSWORD_BCRYPT);
-$stmt->bindParam(5, $password);
+$stmt->bind_param(5, $password);
 $time = strtotime(time,now);
-$stmt->bindParam(6, $time);
+$stmt->bind_param(6, $time);
 $return = $stmt->execute();
 
 
 $stmt = $dbh->prepare("INSERT INTO objects (name, city, address, postal_code, description, longitude, latitude, rating, owner_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bindParam(1, 'McMaster University');
-$stmt->bindParam(2, 'Hamilton');
-$stmt->bindParam(3, '1280 Main Street West');
-$stmt->bindParam(4, 'L8S 1B3');
-$stmt->bindParam(5, 'Wonderful place!');
+$stmt->bind_param(1, 'McMaster University');
+$stmt->bind_param(2, 'Hamilton');
+$stmt->bind_param(3, '1280 Main Street West');
+$stmt->bind_param(4, 'L8S 1B3');
+$stmt->bind_param(5, 'Wonderful place!');
 $longitude = 43.2575;
 $latitude = -79.9168;
-$stmt->bindParam(6, $longitude);
-$stmt->bindParam(7, $latitude);
-$owner = 1;
-$stmt->bindParam(8, 5);
-$stmt->bindParam(9,$owner);
+$stmt->bind_param(6, $longitude);
+$stmt->bind_param(7, $latitude);
+$owner_id = 1;
+$stmt->binbind_paramdParam(8, 5);
+$stmt->bind_param(9,$owner_id);
 $return = $stmt->execute();
 
 
