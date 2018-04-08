@@ -15,7 +15,7 @@ try {
 
   //Create SQL statements to create tables.
   //Users Table
-  $sql_users = "CREATE TABLE users (
+  $sql_users = "CREATE TABLE siteDB.users (
   id INT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
   username VARCHAR(30) NOT NULL,
   firstname VARCHAR(30) NOT NULL,
@@ -28,7 +28,7 @@ try {
   )";
 
   //Objects Table
-  $sql_objects = "CREATE TABLE objects (
+  $sql_objects = "CREATE TABLE siteDB.objects (
   name VARCHAR(50) NOT NULL,
   city VARCHAR(50) NOT NULL,
   address VARCHAR(50) NOT NULL,
