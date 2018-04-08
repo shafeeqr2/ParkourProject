@@ -42,7 +42,7 @@ try {
 
 
 } catch(PDOException $ex){
-    die(json_encode(array('outcome' => false, 'message' => 'Unable to create tables.')));
+    die(json_encode(array('outcome' => false, 'message' => $e->getMessage())));
 }
 
 $sql_list = "SHOW TABLES FROM $dbname";
