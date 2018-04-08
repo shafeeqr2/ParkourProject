@@ -7,8 +7,9 @@ try {
   $sql_drop_users = "drop table if exists siteDB.users cascade";
   $sql_drop_objects = "drop table if exists siteDB.objects cascade";
 
-  $dbh ->  exec($sql_drop_users);
   $dbh ->  exec($sql_drop_objects);
+  $dbh ->  exec($sql_drop_users);
+
 
 
   //Create SQL statements to create tables.
