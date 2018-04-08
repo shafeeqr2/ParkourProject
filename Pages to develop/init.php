@@ -52,9 +52,14 @@ try {
 }
 
 echo "<br>";
-$dbname = 'siteDB';
+
+echo $dbname;
+echo "<br>";
+
 $sql_list = "SHOW TABLES FROM $dbname";
-$result = mysql_query($sql_list);
+
+$stmt = $dbh -> prepare($sql_list);
+$result = $stmt ->  execute();
 
 if (!$result) {
     echo "DB Error, could not list tables\n";
