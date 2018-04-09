@@ -130,6 +130,6 @@ li a:hover {
 
 
 html {
-  background: url(image/bgd_search.jpg) no-repeat center center fixed;
+  background: url(../image/bgd_search.jpg) no-repeat center center fixed;
   background-size: cover;
 }

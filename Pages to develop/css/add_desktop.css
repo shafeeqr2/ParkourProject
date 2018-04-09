@@ -23,81 +23,81 @@ li a:hover {
     background-color: #26b9d0;
 }
 
-h1 {
-
-  font-size: 20px;
-
-}
-
 .map_frame {
 
   /* align:"center"; */
-  z-index: 1;
-  display: block;
-  height: 50%;
+  /* z-index: 1; */
+  /* display: block; */
+  height:50%;
   width: 25%;
 
   /* margin-left: 1600px;
   margin-top: 200px; */
-  /* margin: 0; */
-  top: 20%;
+
+  top: 30%;
   right: 5%;
   /* margin-right: -50%; */
   /* transform: translate(-50%, -50%) */
-  /* position: fixed; */
+  position: absolute;
 
 
 }
 
+.checkbox {
+  margin-left: inherit;
+  font-size: 20px;
+}
 .rating_above {
-  font-size: 17px;
-  height: 15px;
+  /* font-size: 25px; */
+  height: 25px;
   margin-left: 5%;
-  text-align: left;
   /* position: relative; */
   /* font: "Ar"; */
+  font-size: 22px;
   /* width: auto; */
+
+  text-align: left;
 }
 
 
 .rating_dropdown {
-  font-size: 17px;
-  margin-left: 10px;
+  font-size: 20px;
+  margin-left: 30px;
 }
 
 
 
 .textbox {
-  font-size: 17px;
-  width: 70%;
+  font-size: 22px;
+  width: 80%;
   height: 25px;
   margin-bottom: 20px;
   position: relative;
-  left: 10px;
+  left: 30px;
   padding-left: 15px;
   transition: 0.5s;
 }
 
 
 .textbox_num {
-  font-size: 18px;
-  width: 30%;
+  font-size: 22px;
+  width: 39%;
   height: 25px;
   margin-bottom: 20px;
   position: relative;
-  left: 10px;
+  left: 30px;
   padding-left: 15px;
   transition: 0.5s;
 }
 
 
 .textarea {
-  font-size: 18px;
+  font-size: 22px;
   width: 80%;
   height: 50%;
   margin-bottom: 20px;
   position: relative;
-  left: 10px;
+  left: 30px;
   padding-left: 15px;
   transition: 0.5s;
 
@@ -110,7 +110,7 @@ h1 {
 
 .checkbox {
   margin-bottom: 20px;
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 
@@ -120,7 +120,7 @@ h1 {
   color: white;
   border: none;
   padding: 10px 32px;
-  margin-left: 20%;
+  margin-left: 40%;
   display: inline-block;
   transition: all 0.5s;
   cursor: pointer;
@@ -154,15 +154,15 @@ h1 {
 }
 
 .file {
-  margin-left: 15px;
-  font-size: 17px;
+  margin-left: 30px;
+  font-size: 20px;
 
 }
 
 /* The Modal (background) */
 .modal {
-  /* z-index: 1; /* Sit on top */
-  /* position: fixed; /* Stay in place */
+    /* z-index: 1; /* Sit on top */ */
+    position: fixed; /* Stay in place */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -175,16 +175,16 @@ h1 {
 .modal-content {
     right:0;
     background-color: #cccccc;
-    margin: auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 100%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
     transition:  0.5s;
     right:0;
 }
 
 
 html {
-  background: url(image/bgd_add_place.jpeg) no-repeat center center fixed;
+  background: url(../image/bgd_add_place.jpeg) no-repeat center center fixed;
   background-size: cover;
 
 

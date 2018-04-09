@@ -31,6 +31,31 @@ h1 {
 }
 
 
+
+
+.textbox {
+  font-size: 22px;
+  width: 100%;
+  height: auto%;
+  /* margin-bottom: 20px; */
+  position: relative;
+  left: 30px;
+  padding-left: 15px;
+
+}
+
+.btnSubmit {
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 32px;
+  margin-left: 120px;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
 .map_frame2 {
 
   /* align:"center"; */
@@ -51,6 +76,11 @@ h1 {
 
 }
 
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
 
 /* Add padding to container elements */
 .container {
@@ -60,28 +90,7 @@ h1 {
 
 
 
-/* The Modal (background) */
-.modal {
-    /* z-index: 1; /* Sit on top */ */
-    position: fixed; /* Stay in place */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    padding-top: 50px;
-}
 
-/* Modal Content/Box */
-.modal-content {
-    right:0;
-    background-color: #cccccc;
-    margin: auto ; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 90%; /* Could be more or less, depending on screen size */
-    transition:  0.5s;
-    right:0;
-}
 
 tr.table_row > td{
   padding-bottom: 1em;

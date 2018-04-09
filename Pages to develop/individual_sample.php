@@ -1,12 +1,19 @@
+<?php include 'php/header.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
+
+  <script src="js/comment_and_rating.js"></script>
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
   <meta name="viewport" content="width=device-width"  initial-scale=1 />
   <title>
     Details Page
   </title>
-  <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="details_portrait.css">
-  <link rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" href="details_desktop.css">
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="css/details_portrait.css">
+  <link rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" href="css/details_desktop.css">
   <link rel="icon" href="image/icon.jpg">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
@@ -20,13 +27,7 @@
 <body>
 
 
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="search.html">Search</a></li>
-    <li><a href="registration.html">Register</a></li>
-    <li><a href="login.html">Login</a></li>
-    <li><a href="submission.html">Add Location</a></li>
-  </ul>
+  <?php include 'php/menu.inc'; ?>
 
   <div class="modal">
 
@@ -84,8 +85,10 @@
             </td>
           </tr>
 
-
+          <col width="20%">
+          <col width="80%">
           <tr class="table_row">
+
             <td>
               <para1 class="para1">Description:</para1>
             </td>
@@ -93,7 +96,97 @@
               <para3 class="para3">It's an awesome place. There's lots of gothic archietecture! It really allows one to express themselves.</para3><br>
             </td>
           </tr>
-          </table>
+        </table>
+
+        <p><h2>Comments From other Users:</h2></p>
+        <?php
+        $_SESSION['loggedIn'] = true;
+        if ($_SESSION['loggedIn'] == true) {?>
+
+        <form id="add_comment_rating" class="modal-content" name="add_comment_rating" method="post" aciton="php/add_comment_rating.php" >
+
+            <input class="textbox" type="text" name= "comment" placeholder="Add comments"  >
+            <br>
+            <p class = "post_rating"> Rating:
+            <input list="ratings_list" class="rating_dropdown" name="rating" id="rating">
+             <datalist id="ratings_list">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </datalist> </p>
+            <br>
+            <input type="submit" name="submit" class="btnSubmit" value="Submit" onclick="return validate(add_comment_rating);" >
+
+        </form>
+
+
+      <?php } else {?>
+
+        <p>Please <a href = "login.php">Login</a> to post comments.</p>
+
+      <?php } ?>
+
+          <div id="msg"></div>
+
+          <table id="listofcomments" style="width:100%">
+
+          <tr class="table_row">
+
+            <td class="td2">
+              <para1 class="para1"> Username </para1>
+            </td>
+            <td class="td2">
+              <para1 class="para1"> Comment Left by User </para1><br>
+            </td>
+            <td class="td2">
+              <para1 class="para1"> Rating </para1><br>
+            </td>
+          </tr>
+
+
+          <?php
+          //Get Current object id
+          $object_id = 1;
+
+          $stmt = $dbh->prepare("SELECT siteDB.comments_and_ratings.comment, siteDB.comments_and_ratings.rating, siteDB.users.username
+          FROM siteDB.comments_and_ratings, siteDB.users
+          WHERE siteDB.users.id = siteDB.comments_and_ratings.owner_id");
+          $return = $stmt -> execute();
+
+          if ($return) {
+            while ($row = $stmt->fetch()) {
+
+            ?>
+            <tr class="table_row">
+              <td class="td2">
+                <para1 class="para3">
+                <?php  echo $row['username'] ?>
+                </para1>
+              </td>
+              <td class="td2">
+                <para3 class="para3">
+                <?php echo $row['comment'] ?>
+                </para3><br>
+              </td>
+
+              <td class="td2">
+                <para3 class="para3">
+                <?php echo $row['rating'] ?>
+                </para3><br>
+              </td>
+            </tr>
+
+            <?php
+            }
+          }
+
+          ?>
+
+
+
+        </table>
 
       </div>
                     <div class="map_frame2" id="mapid"></div>
@@ -120,5 +213,4 @@
 
 
   </script>
-</body>
-</html>
+  <?php include 'php/footer.php'; ?>

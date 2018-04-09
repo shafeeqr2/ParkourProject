@@ -148,7 +148,7 @@ function validate(form) {
     return false;
   }
 
-	console.log("hi");
+	console.log("Successful carried out all checks.");
 
   return true;
 

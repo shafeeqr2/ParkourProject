@@ -96,6 +96,6 @@ li a:hover {
 }
 
 html {
-  background: url(image/background.jpg) no-repeat center center fixed;
+  background: url(../image/background.jpg) no-repeat center center fixed;
   background-size: cover;
 }

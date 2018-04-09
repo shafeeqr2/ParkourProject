@@ -1,12 +1,16 @@
+<?php include 'php/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
   <meta name="viewport" content="width=device-width"  initial-scale=1 />
   <title>
     Add Place
   </title>
-  <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="add_portrait.css">
-  <link rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" href="add_desktop.css">
+
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="css/add_portrait.css">
+  <link rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" href="css/add_desktop.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
   crossorigin=""/>
@@ -22,19 +26,11 @@
 </head>
 <body>
 
-
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="search.html">Search</a></li>
-    <li><a href="registration.html">Register</a></li>
-    <li><a href="login.html">Login</a></li>
-    <li><a href="submission.html">Add Location</a></li>
-  </ul>
-
+  <?php include 'php/menu.inc'; ?>
 
   <div class="modal">
 
-    <form class="modal-content"  style="background-color:rgba(215, 233, 248, 0.7)" action="#SOME_URL_TO_PHP" method=POST name="form_submission" >
+    <form class="modal-content"  style="background-color:rgba(215, 233, 248, 0.7)" method="post" action="php/add_location.php"  id="add_location" name="form_submission" >
       <div class="container">
         <h1>
           Know of a cool place to parkour? Share it with the community!
@@ -72,15 +68,20 @@
         <div class="map_frame" id="mapid"></div>
         <br>
 
-        <button class="btnSubmit" type="button" onclick="return validate(form_submission);"><span> Upload </span></button>
+        <input class="btnSubmit" name="submit" type="submit" onclick="return validate(form_submission);" value = "Upload" >
+
+
         <br>
       </div>
     </form>
+
+
   </div>
+  <div id="msg"></div>
   <br>
 
   <script>
-
+//  <input class="btnSubmit" type="submit" onclick="return validate(form_submission);"><span> Upload </span></button>
   // Declare Map. The lattitude and longitude are taken from the location placeholders.
   // In the final submission they may be taken from the server.
   var mymap = L.map('mapid').setView([document.getElementById("location_latitude").value , document.getElementById("location_longitude").value ], 15);
@@ -136,11 +137,6 @@
     document.getElementById("location_longitude").value = parseFloat(e.latlng.lng.toFixed(4));
   });
 
-
-
-
-
   </script>
 
-</body>
-</html>
+  <?php include 'php/footer.php'; ?>

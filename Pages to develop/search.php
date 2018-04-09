@@ -1,3 +1,4 @@
+<?php include 'php/header.php'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -7,23 +8,16 @@
 <head>
   <meta name="viewport" content="width=device-width"  initial-scale=1 />
   <title> Search </title>
-    <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="search_portrait.css">
-    <link rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" href="search_desktop.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="css/search_portrait.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" href="css/search_desktop.css">
       <link rel="icon" href="image/icon.jpg">
 </head>
 
 <body>
+  <?php include 'php/menu.inc'; ?>
 
 
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="search.html">Search</a></li>
-    <li><a href="registration.html">Register</a></li>
-    <li><a href="login.html">Login</a></li>
-    <li><a href="submission.html">Add Location</a></li>
-  </ul>
-
-  <form class="modal-content"  style="background-color:rgba(215, 233, 248, 0.8)" name="form_registration" method="link" action="results_sample.html">
+  <form class="modal-content"  style="background-color:rgba(215, 233, 248, 0.8)" name="form_registration" method="link" action="results_sample.php">
     <table>
       <tr>
         <td>
@@ -33,10 +27,10 @@
         </td>
       </tr>
       <tr>
-        <td><input class="textbox" type="textbox" name= "text_search" placeholder="Type a location here..."  ></td>
+        <td><input class="textbox" type="textbox" name= "text_search" placeholder="Name a city..."  ></td>
 
 			<tr>
-        <input class="GPSSearch" type="button" name= "search_gps" value="Search by GPS" onclick="getLocation()"> </button>
+        <input class="GPSSearch" type="button" name= "search_gps" value="Search Near Me" onclick="getLocation()"> </button>
         <!-- <td></td> -->
 				<!-- <p id="your_location">Click the button to get your coordinates.</p> -->
 			</tr>

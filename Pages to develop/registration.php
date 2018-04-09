@@ -1,10 +1,11 @@
+<?php include 'php/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width"  initial-scale=1 />
   <title> Registration Page </title>
-  <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="register_portrait.css">
-  <link rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" href="register_desktop.css">
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="css/register_portrait.css">
+  <link rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" href="css/register_desktop.css">
   <link rel="icon" href="image/icon.jpg">
 
   <script src="js/registration.js"> </script>
@@ -12,17 +13,13 @@
 </head>
 <body>
 
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="search.html">Search</a></li>
-    <li><a href="registration.html">Register</a></li>
-    <li><a href="login.html">Login</a></li>
-    <li><a href="submission.html">Add Location</a></li>
-  </ul>
+  <?php include 'php/menu.inc'; ?>
 
   <div class="modal">
-
-    <form class="modal-content"  style="background-color:rgba(215, 233, 248, 0.7)" name="form_registration">
+   <?php
+   if (($_SESSION['username']) == null) {
+    ?>
+    <form class="modal-content"  style="background-color:rgba(215, 233, 248, 0.7)" name="form_registration" id = "add_users" method="post" action="php/add_user.php">
       <div class="container">
         <h1>
           Hi, this is a registration page.
@@ -43,14 +40,20 @@
         <input class="checkbox" type="checkbox" name="checkbox"> I agree with the <a href="URL_TO_TERMS_AND_CONDITIONS" style="color:0a14ff"> Terms of Service</a>. </input>
         <br>
         <br>
-        <button class="btnSubmit" type="button" onclick="return validate(form_registration);" ><span> Let's Parkour! </span></button>
+        <input class="btnSubmit" type="submit" onclick="return validate(form_registration);" value="Let's Parkour!" ></input>
         <br>
-        <p>Already an existing user? <a href="login.html"> Sign In </a>
+        <p>Already an existing user? <a href="login.php"> Sign In </a>
         <br>
       </div>
     </form>
+
+<?php } else {?>
+  <h1>
+    You are already logged in.
+  </h1>
+<?php }?>
+
   </div>
 
   <img class="parkour_guy"src="image/guy1.png" alt="Parkour guy"/>
-</body>
-</html>
+  <?php include 'php/footer.php'; ?>

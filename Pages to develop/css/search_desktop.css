@@ -121,7 +121,8 @@ li a:hover {
 
 .table {
   width: 100%;
-}
+}Hi, this is a registration page.
+
 
 .rating_dropdown {
   font-size: 20px;
@@ -155,6 +156,6 @@ li a:hover {
 
 
 html {
-  background: url(image/bgd_search.jpg) no-repeat center center fixed;
+  background: url(../image/bgd_search.jpg) no-repeat center center fixed;
   background-size: cover;
 }
